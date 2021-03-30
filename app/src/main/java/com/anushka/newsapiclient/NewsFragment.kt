@@ -23,7 +23,7 @@ import javax.inject.Inject
 
 
 class NewsFragment : Fragment() {
-    private  lateinit var viewModel: NewsViewModel
+    private lateinit var viewModel: NewsViewModel
     private lateinit var newsAdapter: NewsAdapter
     private lateinit var fragmentNewsBinding: FragmentNewsBinding
     private var country = "us"
@@ -88,7 +88,6 @@ class NewsFragment : Fragment() {
                 is com.anushka.newsapiclient.data.util.Resource.Loading->{
                     showProgressBar()
                 }
-
             }
         })
     }
@@ -100,7 +99,6 @@ class NewsFragment : Fragment() {
             layoutManager = LinearLayoutManager(activity)
             addOnScrollListener(this@NewsFragment.onScrollListener)
         }
-
     }
 
     private fun showProgressBar(){
@@ -119,7 +117,6 @@ class NewsFragment : Fragment() {
            if(newState == AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL){
                isScrolling = true
            }
-
        }
 
        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
@@ -137,8 +134,6 @@ class NewsFragment : Fragment() {
                isScrolling = false
 
            }
-
-
        }
    }
 
@@ -170,12 +165,8 @@ class NewsFragment : Fragment() {
                      viewNewsList()
                      return false
                  }
-
-             })
+          })
    }
-
-
-
 
    fun viewSearchedNews(){
        viewModel.searchedNews.observe(viewLifecycleOwner,{response->
