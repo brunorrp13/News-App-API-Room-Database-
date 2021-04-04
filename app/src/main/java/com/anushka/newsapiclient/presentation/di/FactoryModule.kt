@@ -2,6 +2,7 @@ package com.anushka.newsapiclient.presentation.di
 
 import android.app.Application
 import com.anushka.newsapiclient.domain.usecase.GetNewsHeadlinesUseCase
+import com.anushka.newsapiclient.domain.usecase.GetSavedNewsUseCase
 import com.anushka.newsapiclient.domain.usecase.GetSearchedNewsUseCase
 import com.anushka.newsapiclient.domain.usecase.SaveNewsUseCase
 import com.anushka.newsapiclient.presentation.viewmodel.NewsViewModelFactory
@@ -20,13 +21,15 @@ class FactoryModule {
      application: Application,
      getNewsHeadlinesUseCase: GetNewsHeadlinesUseCase,
      getSearchedNewsUseCase: GetSearchedNewsUseCase,
-     saveNewsUseCase: SaveNewsUseCase
+     saveNewsUseCase: SaveNewsUseCase,
+     getSavedNewsUseCase: GetSavedNewsUseCase
   ):NewsViewModelFactory{
       return NewsViewModelFactory(
           application,
           getNewsHeadlinesUseCase,
           getSearchedNewsUseCase,
-          saveNewsUseCase
+          saveNewsUseCase,
+          getSavedNewsUseCase
       )
   }
 
