@@ -1,10 +1,7 @@
 package com.anushka.newsapiclient.presentation.di
 
 import com.anushka.newsapiclient.domain.repository.NewsRepository
-import com.anushka.newsapiclient.domain.usecase.GetNewsHeadlinesUseCase
-import com.anushka.newsapiclient.domain.usecase.GetSavedNewsUseCase
-import com.anushka.newsapiclient.domain.usecase.GetSearchedNewsUseCase
-import com.anushka.newsapiclient.domain.usecase.SaveNewsUseCase
+import com.anushka.newsapiclient.domain.usecase.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -44,6 +41,14 @@ class UseCaseModule {
       newsRepository: NewsRepository
    ): GetSavedNewsUseCase {
       return GetSavedNewsUseCase(newsRepository)
+   }
+
+   @Singleton
+   @Provides
+   fun provideDeleteSavedNewsUseCase(
+      newsRepository: NewsRepository
+   ): DeleteSavedNewsUseCase {
+      return DeleteSavedNewsUseCase(newsRepository)
    }
 }
 

@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 
 class NewsAdapter:RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-
     private val callback = object : DiffUtil.ItemCallback<Article>(){
         override fun areItemsTheSame(oldItem: Article, newItem: Article): Boolean {
             return oldItem.url == newItem.url
